@@ -2210,6 +2210,9 @@
     "Ask where to save each download" : {
 
     },
+    "Audio visualizer" : {
+
+    },
     "Authenticate to commit the password import into %@." : {
 
     },
@@ -6283,8 +6286,11 @@
         }
       }
     },
-    "Go to Tab" : {
-      "comment" : "Shared tab popover button that shows the tab it is shared to."
+    "Go to Shared Tab" : {
+      "comment" : "Shows the tab this tab's page shares."
+    },
+    "Go to Sharing Tab" : {
+      "comment" : "Shows the tab whose page shares this tab."
     },
     "Go to the other tab" : {
       "comment" : "Tooltip on a sharing bar's message that shows the tab at the other end."
@@ -8033,8 +8039,11 @@
     "Mute" : {
 
     },
+    "Mute Tab" : {
+      "comment" : "Mutes the sound a tab's page plays."
+    },
     "Muted" : {
-
+      "comment" : "A tab's mark while its page plays with its sound muted."
     },
     "Name" : {
       "localizations" : {
@@ -9592,6 +9601,9 @@
     "Play" : {
 
     },
+    "Playing Audio" : {
+      "comment" : "A tab's mark while its page plays sound."
+    },
     "Playlists" : {
 
     },
@@ -10480,6 +10492,9 @@
           }
         }
       }
+    },
+    "Replace Icon" : {
+
     },
     "Replace the iCloud Copy?" : {
       "localizations" : {
@@ -11755,10 +11770,10 @@
       }
     },
     "Shared" : {
-      "comment" : "Accessibility label for a sidebar tab another page shares."
+      "comment" : "A tab's mark while another page shares it."
     },
-    "Shared to %@" : {
-      "comment" : "Shared tab popover; the value is the tab it is shared to."
+    "Sharing a Tab" : {
+      "comment" : "A tab's mark while its page shares another tab."
     },
     "Sheen" : {
       "extractionState" : "manual"
@@ -13045,6 +13060,9 @@
     "Tab scale" : {
 
     },
+    "Tab status" : {
+
+    },
     "Tab to search providers" : {
 
     },
@@ -13751,9 +13769,6 @@
     "This Tab" : {
       "comment" : "Screen sharing picker note on the tab of the page that asks."
     },
-    "This tab is being shared" : {
-      "comment" : "Tooltip on a sidebar tab another page shares."
-    },
     "This tab needs a newer Crest" : {
 
     },
@@ -14278,6 +14293,9 @@
     },
     "Unmute" : {
 
+    },
+    "Unmute Tab" : {
+      "comment" : "Unmutes the sound a tab's page plays."
     },
     "Unmuted" : {
 
