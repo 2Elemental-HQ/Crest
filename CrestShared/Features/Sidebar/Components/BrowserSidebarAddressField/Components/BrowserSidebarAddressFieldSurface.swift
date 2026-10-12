@@ -38,10 +38,7 @@ struct BrowserSidebarAddressFieldSurface: ViewModifier {
                     .scaleEffect(x: loadingProgress, anchor: .leading)
                     .mask(fieldShape)
                     .animation(
-                        BrowserVisualAccessibilityPolicy.animation(
-                            CrestMotion.loadingProgress,
-                            reduceMotion: reduceMotion
-                        ),
+                        CrestMotion.loadingProgress.unlessReducingMotion(reduceMotion),
                         value: loadingProgress
                     )
             }
@@ -69,7 +66,7 @@ struct BrowserSidebarAddressFieldSurface: ViewModifier {
     }
 
     private var loadingProgress: CGFloat {
-        BrowserPageSurfacePolicy.loadingProgress(
+        BrowserPageSurfacePresentation.loadingProgress(
             estimatedProgress: progress,
             isNavigating: isLoading
         )
