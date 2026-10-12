@@ -35,13 +35,6 @@ enum BrowserSidebarMetrics {
     /// beside it.
     static let containerSpacing = CrestSpacing.extraExtraSmall
 
-    /// The roundest corner a layer inside a container takes, however round the
-    /// person sets corners in Look and Feel. Folders and Split Views are many
-    /// rows tall; corners that followed a capsule setting would turn them into
-    /// pills, so the setting is held here and everything else is derived from
-    /// it.
-    static let maximumNestedCornerRadius: CGFloat = 10
-
     // MARK: - Actions - Containers
 
     /// The padding a container keeps under its last row. A row already keeps
@@ -58,24 +51,47 @@ enum BrowserSidebarMetrics {
     // MARK: - Actions - Corners
 
     /// The corner radius of a layer drawn inside `depth` containers, from the
-    /// device's corner radius setting.
+    /// device's corner radius setting and the sidebar's current row height.
     @MainActor
     static func layerCornerRadius(depth: Int = 0) -> CGFloat {
-        layerCornerRadius(depth: depth, userRadius: BrowserDeviceAppearanceStore.shared.sidebarCornerRadius)
+        layerCornerRadius(
+            depth: depth, userRadius: BrowserDeviceAppearanceStore.shared.sidebarCornerRadius,
+            capsuleRadius: capsuleRadius(
+                tabScale: BrowserSidebarDensityPreference.number(BrowserSidebarDensityPreference.scaleKey, default: 1)))
     }
 
     /// The corner radius of a layer drawn inside `depth` containers, for a
-    /// corner radius setting of `userRadius`.
-    ///
-    /// A layer one container deep wears the setting itself, up to
-    /// ``maximumNestedCornerRadius``; the container around it is that plus
-    /// ``containerPadding``, so the two curves stay parallel. A setting below
-    /// the padding grows the outer corner by no more than the setting, so
-    /// Square stays square at every depth and the slider stays continuous.
+    /// corner radius setting of `userRadius`, at the default row height.
     static func layerCornerRadius(depth: Int, userRadius: Double) -> CGFloat {
-        let setting = userRadius.isFinite ? min(max(CGFloat(userRadius), 0), maximumNestedCornerRadius) : 0
-        let outer = setting + min(setting, containerPadding)
+        layerCornerRadius(depth: depth, userRadius: userRadius, capsuleRadius: capsuleRadius(tabScale: 1))
+    }
+
+    /// The corner radius of a layer drawn inside `depth` containers.
+    ///
+    /// A top-level layer wears the setting plus ``containerPadding``, so the
+    /// rows a container holds can wear the setting itself and the two curves
+    /// stay parallel; each level inward is ``containerPadding`` tighter. A
+    /// setting below the padding grows the outer corner by no more than the
+    /// setting, so Square stays square at every depth and the slider stays
+    /// continuous. No corner grows past `capsuleRadius`, half a row's height:
+    /// at Capsule a single row is a capsule, and a Split View or open folder,
+    /// which a capsule's corners cannot fit, keeps exactly that quarter circle
+    /// so it matches the capsules around it.
+    static func layerCornerRadius(depth: Int, userRadius: Double, capsuleRadius: CGFloat) -> CGFloat {
+        let setting = userRadius.isFinite ? max(CGFloat(userRadius), 0) : 0
+        let outer = min(setting + min(setting, containerPadding), max(0, capsuleRadius))
         return max(0, outer - containerPadding * CGFloat(max(0, depth)))
+    }
+
+    /// Half the height of one sidebar row at `tabScale`: the radius of a
+    /// capsule row, and the roundest any sidebar corner gets.
+    static func capsuleRadius(tabScale: Double) -> CGFloat {
+        #if os(iOS)
+            let touch = true
+        #else
+            let touch = false
+        #endif
+        return BrowserSidebarDensity(tabScale).rowHeight(base: CrestLayout.sidebarRowHeight, touch: touch) / 2
     }
 }
 

@@ -4045,6 +4045,10 @@
     "2026-10-12-floating-surface-material": {
       "category": "improved",
       "message": "Show the chosen sidebar material in Site Controls, notices, Peek and other floating panels"
+    },
+    "2026-10-12-capsule-corners": {
+      "category": "improved",
+      "message": "Keep Capsule corners: single rows are capsules, and Split Views and open folders round their corners to match"
     }
   }
 }
