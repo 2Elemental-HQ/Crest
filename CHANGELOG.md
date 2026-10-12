@@ -7,7 +7,9 @@ and Crest uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-This release brings coding agents to Crest on Mac, a rebuilt command palette
+## [0.8.0] - 2026-10-12
+
+Crest 0.8 brings coding agents to Crest on Mac, a rebuilt command palette
 and Settings, many more browsers to import from, and a quicker, more
 consistent sidebar.
 
@@ -464,7 +466,8 @@ Mac, iPhone, and iPad.
 
 Crest releases before 0.3.0 predate this changelog. Their development history remains available in Git.
 
-[Unreleased]: https://github.com/pauljoda/Crest/compare/v0.7.2...HEAD
+[Unreleased]: https://github.com/pauljoda/Crest/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/pauljoda/Crest/compare/v0.7.2...v0.8.0
 [0.7.0]: https://github.com/pauljoda/Crest/compare/v0.6.33...v0.7.0
 [0.6.33]: https://github.com/pauljoda/Crest/compare/v0.6.8...v0.6.33
 [0.6.3]: https://github.com/pauljoda/Crest/compare/v0.5.7...v0.6.3
