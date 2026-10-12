@@ -89,10 +89,6 @@ final class BrowserDeviceAppearanceStore {
         cornerRadius.isFinite
             ? min(max(cornerRadius, 0), Self.maximumCornerRadius) : BrowserLookAndFeelDefaults.cornerRadius
     }
-    /// Containers keep straight header edges, even when their child tabs are capsules.
-    func containerCornerRadius(padding: Double = 0) -> Double {
-        sidebarCornerRadius == 0 ? 0 : min(sidebarCornerRadius, 10) + padding
-    }
     @ObservationIgnored private let defaults: UserDefaults
     var tabs: BrowserTabAppearance { didSet { save(tabs, key: Self.tabsKey) } }
     var address: BrowserAddressAppearance { didSet { save(address, key: Self.addressKey) } }

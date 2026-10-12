@@ -13,7 +13,10 @@ struct BrowserFolderHighlightSurface: ViewModifier {
     var textColorMode: SpaceTextColorMode = .automatic
     var showsFill = true
     var showsBorders = true
-    var leadingInset: CGFloat = CrestSpacing.small
+    /// How many folders hold this one. Each steps the surface in by the
+    /// container padding and rounds it one padding tighter, concentric with
+    /// the folder around it.
+    var depth = 0
     var isSelected = false
     var emphasisOpacity: Double = 0
 
@@ -41,8 +44,7 @@ struct BrowserFolderHighlightSurface: ViewModifier {
     }
 
     private var shape: RoundedRectangle {
-        RoundedRectangle(
-            cornerRadius: BrowserDeviceAppearanceStore.shared.containerCornerRadius(), style: .continuous)
+        RoundedRectangle(cornerRadius: BrowserSidebarMetrics.layerCornerRadius(depth: depth), style: .continuous)
     }
 
     func body(content: Content) -> some View {
@@ -61,8 +63,8 @@ struct BrowserFolderHighlightSurface: ViewModifier {
                                 shape.strokeBorder(color.color.opacity(0.5), lineWidth: 1)
                             }
                         }
-                        .padding(.leading, leadingInset)
-                        .padding(.trailing, CrestSpacing.small)
+                        .padding(.leading, BrowserFolderLayout.surfaceLeadingInset(depth: depth))
+                        .padding(.trailing, BrowserSidebarMetrics.layerInset)
                         .allowsHitTesting(false)
                 }
             }

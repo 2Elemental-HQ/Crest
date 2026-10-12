@@ -4037,6 +4037,10 @@
     "2026-10-12-sidebar-surface-material": {
       "category": "improved",
       "message": "Choose how much the sidebar's tabs, folders and bars show through, from Ultra Thin to Ultra Thick, and keep pinned tabs close under the address bar"
+    },
+    "2026-10-12-sidebar-layer-shapes": {
+      "category": "improved",
+      "message": "Give tabs, folders, Split Views, pinned tabs and the address bar one consistent shape and spacing"
     }
   }
 }

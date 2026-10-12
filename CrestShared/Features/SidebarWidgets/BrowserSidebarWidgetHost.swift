@@ -34,7 +34,7 @@ struct BrowserSidebarWidgetHost: View {
                 ownerFaviconData: ownerFaviconData,
                 cycle: cycle
             )
-            .padding(.horizontal, CrestSpacing.small)
+            .padding(.horizontal, BrowserSidebarMetrics.layerInset)
             .overlay(alignment: .trailing) {
                 if instances.count > 1 {
                     BrowserSidebarWidgetDeckStepper(

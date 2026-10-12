@@ -39,22 +39,15 @@ struct BrowserSidebarSplitGroupRowConfiguration {
         capabilities.splitGroupRowMetrics
     }
 
-    /// The member rows' own profile, which the container reads for the two
-    /// insets it borrows rather than chooses.
+    /// The member rows' own profile, which the container reads for the header
+    /// inset it borrows rather than chooses.
     var tabRowMetrics: BrowserSidebarTabRowMetrics {
         capabilities.tabRowMetrics
     }
 
-    /// The container's inset from the sidebar edge, matching the inset a
-    /// free-standing tab row gives its own surface so a group lines up in the
-    /// same column as the tabs above and below it.
-    var rowHorizontalInset: CGFloat {
-        tabRowMetrics.surfaceHorizontalInset
-    }
-
     /// Puts the header's glyph in the same column as the member rows'
     /// favicons: a member carries this same leading inset, and both sit inside
-    /// `containerPadding`.
+    /// the container's padding.
     var headerLeadingInset: CGFloat {
         tabRowMetrics.contentLeadingInset
     }

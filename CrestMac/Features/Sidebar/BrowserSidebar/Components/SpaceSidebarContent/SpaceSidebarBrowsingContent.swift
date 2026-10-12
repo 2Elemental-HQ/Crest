@@ -39,7 +39,7 @@ struct SpaceSidebarBrowsingContent: View {
         let hasPinnedTabs = !listContext.space.sidebar.section(.pinned).isEmpty
         BrowserPinnedTabsDropSection(context: listContext)
             .equatable()
-            .padding(.horizontal, CrestSpacing.small)
+            .padding(.horizontal, BrowserSidebarMetrics.layerInset)
             // The selected pin's glow slides under the address field or the
             // extension strip above rather than holding space of its own.
             .padding(.top, hasPinnedTabs ? BrowserSidebarMetrics.topSectionSpacing : 0)

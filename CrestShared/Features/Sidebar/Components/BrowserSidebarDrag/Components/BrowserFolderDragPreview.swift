@@ -10,8 +10,7 @@ struct BrowserFolderDragPreview: View {
     var loadedTabIDs: Set<UUID>?
 
     var body: some View {
-        let shape = RoundedRectangle(
-            cornerRadius: BrowserDeviceAppearanceStore.shared.containerCornerRadius(), style: .continuous)
+        let shape = RoundedRectangle(cornerRadius: BrowserSidebarMetrics.layerCornerRadius(), style: .continuous)
         let width = BrowserFolderDragPreviewLayout.width(for: rowWidth)
 
         ZStack(alignment: .topLeading) {
@@ -61,8 +60,11 @@ struct BrowserFolderDragPreview: View {
                     .font(.caption).frame(maxWidth: .infinity, alignment: .leading)
                 ForEach(members, id: \.id) { tab in tabLine(tab, leadingInset: 0).frame(maxHeight: .infinity) }
             }
-            .padding(CrestSpacing.extraSmall)
-            .background { CrestSurfaceLayer(shape: .rect(cornerRadius: CrestRadius.control)) }
+            .padding(BrowserSidebarMetrics.containerPadding)
+            .background {
+                CrestSurfaceLayer(
+                    shape: .rect(cornerRadius: BrowserSidebarMetrics.layerCornerRadius(depth: 1), style: .continuous))
+            }
             .padding(.leading, max(BrowserFolderLayout.nestingIndent, row.frame.minX))
         }
     }

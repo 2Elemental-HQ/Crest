@@ -56,7 +56,10 @@ struct BrowserNewTabRowContent: View {
             .vertical,
             BrowserSidebarDensity(tabScale).rowSeparation(hasBorders: hasBorders) / 2
         )
-        .padding(.horizontal, metrics.rowHorizontalInset)
+        // Outside the button on purpose: the margin the hover surface is drawn
+        // within, which lines it up with every other layer, is not part of
+        // what a reader can press.
+        .padding(.horizontal, BrowserSidebarMetrics.layerInset)
         .modifier(BrowserNewTabRowTooltip(metrics: metrics))
     }
 }
@@ -67,9 +70,7 @@ private struct BrowserNewTabRowSurface: ViewModifier {
     @ViewBuilder
     func body(content: Content) -> some View {
         if metrics.showsHoverSurface {
-            content.crestHoverSurface(
-                cornerRadius: CrestLayout.sidebarControlCornerRadius
-            )
+            content.crestHoverSurface(cornerRadius: BrowserSidebarMetrics.layerCornerRadius())
         } else {
             content
         }

@@ -4,7 +4,6 @@ struct BrowserPinnedExtensionStripContent: View {
     // MARK: - Static Variables
 
     private static let sectionHeight: CGFloat = 32
-    private static let sectionCornerRadius = BrowserChromeLayout.addressCornerRadius
 
     // MARK: - Variables
 
@@ -26,9 +25,10 @@ struct BrowserPinnedExtensionStripContent: View {
             height: actions.count > 0 ? Self.sectionHeight : 0
         )
         .background {
-            CrestSurfaceLayer(shape: .rect(cornerRadius: Self.sectionCornerRadius))
+            CrestSurfaceLayer(
+                shape: .rect(cornerRadius: BrowserSidebarMetrics.layerCornerRadius(), style: .continuous))
         }
-        .padding(.horizontal, BrowserChromeLayout.sidebarHorizontalInset)
+        .padding(.horizontal, BrowserSidebarMetrics.layerInset)
         .accessibilityElement(children: .contain)
         .accessibilityLabel("Pinned Extensions")
         .accessibilityIdentifier("browser-pinned-extensions")

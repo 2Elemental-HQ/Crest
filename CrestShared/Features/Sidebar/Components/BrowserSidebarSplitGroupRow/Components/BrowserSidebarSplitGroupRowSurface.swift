@@ -6,6 +6,7 @@ struct BrowserSidebarSplitGroupRowSurface: ViewModifier {
     let interaction: BrowserSidebarSplitGroupRowInteractionContext
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.sidebarLayerDepth) private var depth
 
     func body(content: Content) -> some View {
         content
@@ -29,8 +30,11 @@ struct BrowserSidebarSplitGroupRowSurface: ViewModifier {
             }
             .animation(surfaceAnimation, value: configuration.isPresented)
             .animation(surfaceAnimation, value: isMultiSelected)
-            .padding(.horizontal, configuration.rowHorizontalInset)
-            .padding(.vertical, configuration.metrics.rowVerticalInset)
+            // In the same column as every other layer, with the space it keeps
+            // from its neighbours inside the row, so drag geometry includes the
+            // resting separation.
+            .padding(.horizontal, BrowserSidebarMetrics.layerInset)
+            .padding(.vertical, BrowserSidebarMetrics.containerSpacing)
             .contentShape(.rect)
             .modifier(
                 BrowserTabSelectionTarget(
@@ -63,11 +67,7 @@ struct BrowserSidebarSplitGroupRowSurface: ViewModifier {
     }
 
     private var containerShape: RoundedRectangle {
-        RoundedRectangle(
-            cornerRadius: BrowserDeviceAppearanceStore.shared.containerCornerRadius(
-                padding: configuration.metrics.containerPadding),
-            style: .continuous
-        )
+        RoundedRectangle(cornerRadius: BrowserSidebarMetrics.layerCornerRadius(depth: depth), style: .continuous)
     }
 
     private var surfaceAnimation: Animation? {

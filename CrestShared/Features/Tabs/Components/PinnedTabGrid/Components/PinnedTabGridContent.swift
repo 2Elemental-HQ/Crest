@@ -43,13 +43,11 @@ struct PinnedTabGridContent: View {
                     renameTab: { beginRenaming(tab) }
                 )
             }
-            RoundedRectangle(cornerRadius: BrowserDeviceAppearanceStore.shared.sidebarCornerRadius, style: .continuous)
+            RoundedRectangle(cornerRadius: BrowserSidebarMetrics.layerCornerRadius(), style: .continuous)
                 .fill(.primary.opacity(0.035))
                 .overlay {
-                    RoundedRectangle(
-                        cornerRadius: BrowserDeviceAppearanceStore.shared.sidebarCornerRadius, style: .continuous
-                    )
-                    .strokeBorder(.primary.opacity(0.12), lineWidth: 0.5)
+                    RoundedRectangle(cornerRadius: BrowserSidebarMetrics.layerCornerRadius(), style: .continuous)
+                        .strokeBorder(.primary.opacity(0.12), lineWidth: 0.5)
                 }
                 .opacity(projection.insertionIndex == nil ? 0 : 1)
                 .allowsHitTesting(false)

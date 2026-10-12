@@ -77,10 +77,7 @@ struct BrowserSidebarAddressFieldSurface: ViewModifier {
     }
 
     private var fieldShape: RoundedRectangle {
-        RoundedRectangle(
-            cornerRadius: BrowserDeviceAppearanceStore.shared.sidebarCornerRadius,
-            style: .continuous
-        )
+        RoundedRectangle(cornerRadius: BrowserSidebarMetrics.layerCornerRadius(), style: .continuous)
     }
 }
 

@@ -39,7 +39,7 @@ struct MobileBrowserSpacePage: View {
             BrowserPinnedTabsDropSection(context: listContext)
                 .equatable()
                 .fixedSize(horizontal: false, vertical: true)
-                .padding(.horizontal, 12)
+                .padding(.horizontal, BrowserSidebarMetrics.layerInset)
                 .padding(.vertical, 10)
 
             BrowserSpaceHeader(

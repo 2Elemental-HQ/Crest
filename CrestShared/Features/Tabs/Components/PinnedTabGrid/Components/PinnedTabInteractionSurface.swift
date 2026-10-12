@@ -20,7 +20,7 @@ struct PinnedTabInteractionSurface: ViewModifier {
                 BrowserTabStatusSurfaces(
                     tab: statusSource,
                     style: BrowserTabStatusSurfaceStyle(
-                        accent: selectionAccent, cornerRadius: BrowserDeviceAppearanceStore.shared.sidebarCornerRadius,
+                        accent: selectionAccent, cornerRadius: BrowserSidebarMetrics.layerCornerRadius(),
                         barOpacity: CrestOpacity.prominentStatusSurface)
                 )
             }

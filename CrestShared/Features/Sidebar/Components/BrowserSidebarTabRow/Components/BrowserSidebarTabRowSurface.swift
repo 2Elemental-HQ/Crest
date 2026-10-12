@@ -173,6 +173,7 @@ struct BrowserSidebarTabRowSurface: ViewModifier {
 private struct BrowserSidebarTabRowAppearance: ViewModifier {
     let configuration: BrowserSidebarTabRowConfiguration
     @Binding var isHovering: Bool
+    @Environment(\.sidebarLayerDepth) private var depth
 
     func body(content: Content) -> some View {
         content
@@ -182,7 +183,7 @@ private struct BrowserSidebarTabRowAppearance: ViewModifier {
                         tabID: configuration.tab.id, context: configuration.context,
                         canAct: { configuration.isCurrentAndUnlocked }),
                     style: BrowserTabStatusSurfaceStyle(
-                        accent: accent, cornerRadius: BrowserDeviceAppearanceStore.shared.sidebarCornerRadius,
+                        accent: accent, cornerRadius: BrowserSidebarMetrics.layerCornerRadius(depth: depth),
                         barOpacity: CrestOpacity.statusSurface)
                 )
             }

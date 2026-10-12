@@ -41,7 +41,7 @@ struct SpaceSidebarAddressBand: View {
             SpacePagerSettlement.standardAnimation.unlessReducingMotion(reduceMotion),
             value: isAddressEditing.wrappedValue ? nil : address.wrappedValue
         )
-        .padding(.horizontal, BrowserChromeLayout.sidebarHorizontalInset)
+        .padding(.horizontal, BrowserSidebarMetrics.layerInset)
 
     }
 

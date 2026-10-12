@@ -31,24 +31,22 @@ struct BrowserFolderNestDropHighlight: View {
 
     let state: BrowserSidebarReorderState
     let target: Target
+    /// How many folders hold the row this marks, whose bounds start at the
+    /// sidebar's leading edge however deep the row is; the outline steps in
+    /// and tightens to match the surface drawn there.
+    var depth = 0
 
     var body: some View {
         if target.isTargeted(in: state) {
-            RoundedRectangle(
-                cornerRadius: BrowserDeviceAppearanceStore.shared.containerCornerRadius(),
-                style: .continuous
-            )
-            .fill(CrestColor.dropIndicator.opacity(0.14))
-            .overlay {
-                RoundedRectangle(
-                    cornerRadius: BrowserDeviceAppearanceStore.shared.containerCornerRadius(),
-                    style: .continuous
-                )
-                .strokeBorder(CrestColor.dropIndicator, lineWidth: 1.5)
-            }
-            .padding(.horizontal, CrestSpacing.small)
-            .allowsHitTesting(false)
-            .accessibilityHidden(true)
+            let shape = RoundedRectangle(
+                cornerRadius: BrowserSidebarMetrics.layerCornerRadius(depth: depth), style: .continuous)
+            shape
+                .fill(CrestColor.dropIndicator.opacity(0.14))
+                .overlay { shape.strokeBorder(CrestColor.dropIndicator, lineWidth: 1.5) }
+                .padding(.leading, BrowserFolderLayout.surfaceLeadingInset(depth: depth))
+                .padding(.trailing, BrowserSidebarMetrics.layerInset)
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
         }
     }
 }
