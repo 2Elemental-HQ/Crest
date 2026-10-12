@@ -117,7 +117,7 @@ struct PinnedTabTile: View {
                 )
             }
         }
-        .modifier(BrowserTabStatusBadgeHost(tab: statusSource))
+        .modifier(BrowserTabStatusBadgeHost(tab: statusSource, anchor: .tile))
         .animation(
             CrestMotion.contentState.unlessReducingMotion(reduceMotion),
             value: loaded

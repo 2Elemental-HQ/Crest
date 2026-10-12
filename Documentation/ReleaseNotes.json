@@ -4057,6 +4057,10 @@
     "crest-08-agents-palette-settings": {
       "category": "new",
       "message": "Crest 0.8 lets coding agents use Crest as their browser on Mac, brings a rebuilt command palette and Settings, imports from many more browsers, and makes the sidebar quicker and more consistent."
+    },
+    "pinned-tab-status-badge-corner": {
+      "category": "fixed",
+      "message": "On pinned tabs, the sound and sharing badge sits in the tile\u2019s bottom corner instead of over the site icon, so the icon is easy to click."
     }
   }
 }
