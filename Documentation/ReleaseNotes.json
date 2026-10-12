@@ -4012,11 +4012,11 @@
     },
     "2026-10-12-iphone-welcome-card-width": {
       "category": "fixed",
-      "message": "Line up the welcome card with the rest of the iPhone welcome page"
+      "message": "The welcome card on iPhone lines up with the rest of the welcome page."
     },
     "2026-10-12-refuse-unexpected-edits-instead-of-quitting": {
       "category": "fixed",
-      "message": "Refuse an edit Crest cannot make, such as one on a tab that just closed or a change only a Space's owner may make, instead of quitting."
+      "message": "Crest no longer quits when it can’t make an edit, such as one on a tab that just closed or a change only a Space’s owner may make."
     },
     "2026-10-12-prompt-hosts-answer-every-question": {
       "category": "internal",
@@ -4024,7 +4024,7 @@
     },
     "2026-10-12-refused-engine-report-safe": {
       "category": "fixed",
-      "message": "Keep a page's report that Crest can't use from closing the app"
+      "message": "A page reporting something Crest can’t use no longer closes the app."
     },
     "2026-10-12-concrete-pane-views": {
       "category": "internal",
@@ -4036,23 +4036,23 @@
     },
     "2026-10-12-sidebar-surface-material": {
       "category": "improved",
-      "message": "Choose how much the sidebar's tabs, folders and bars show through, from Ultra Thin to Ultra Thick, and keep pinned tabs close under the address bar"
+      "message": "Choose how much the sidebar’s tabs, folders and bars let the background show through, from Ultra Thin to Ultra Thick, in Look and Feel settings. Pinned tabs now sit closer under the address bar."
     },
     "2026-10-12-sidebar-layer-shapes": {
       "category": "improved",
-      "message": "Give tabs, folders, Split Views, pinned tabs and the address bar one consistent shape and spacing"
+      "message": "Tabs, folders, Split Views, pinned tabs and the address bar now share one shape and spacing that follows your corner setting."
     },
     "2026-10-12-floating-surface-material": {
       "category": "improved",
-      "message": "Show the chosen sidebar material in Site Controls, notices, Peek and other floating panels"
+      "message": "Site Controls, Peek, notices and other floating panels use the same material as the sidebar."
     },
     "2026-10-12-capsule-corners": {
       "category": "improved",
-      "message": "Keep Capsule corners: single rows are capsules, and Split Views and open folders round their corners to match"
+      "message": "With Capsule corners, single tabs are capsules, and Split Views and open folders round their corners to match."
     },
     "2026-10-12-site-controls-tile-fill": {
-      "category": "improved",
-      "message": "Keep the buttons in Site Controls easy to see against its background"
+      "category": "internal",
+      "message": "Give tiles inside material panels a fixed fill"
     }
   }
 }
