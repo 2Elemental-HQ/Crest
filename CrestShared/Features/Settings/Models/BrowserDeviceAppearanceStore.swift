@@ -80,6 +80,7 @@ final class BrowserDeviceAppearanceStore {
     static let tabsKey = "crest.appearance.tabs"
     static let addressKey = "crest.appearance.address"
     static let cornerRadiusKey = "crest.appearance.cornerRadius"
+    static let surfaceMaterialKey = "crest.appearance.surfaceMaterial"
     static let maximumCornerRadius: Double = 40
     var cornerRadius: Double {
         didSet { defaults.set(sidebarCornerRadius, forKey: Self.cornerRadiusKey) }
@@ -95,6 +96,10 @@ final class BrowserDeviceAppearanceStore {
     @ObservationIgnored private let defaults: UserDefaults
     var tabs: BrowserTabAppearance { didSet { save(tabs, key: Self.tabsKey) } }
     var address: BrowserAddressAppearance { didSet { save(address, key: Self.addressKey) } }
+    /// The material the sidebar's layers are drawn with, stored by name.
+    var surfaceMaterial: CrestSurfaceMaterial {
+        didSet { defaults.set(surfaceMaterial.name, forKey: Self.surfaceMaterialKey) }
+    }
 
     init(defaults: UserDefaults) {
         self.defaults = defaults
@@ -121,6 +126,9 @@ final class BrowserDeviceAppearanceStore {
             defaults.data(forKey: Self.addressKey).flatMap {
                 try? JSONDecoder().decode(BrowserAddressAppearance.self, from: $0)
             } ?? .init()
+        surfaceMaterial =
+            CrestSurfaceMaterial.named(defaults.string(forKey: Self.surfaceMaterialKey))
+            ?? BrowserLookAndFeelDefaults.surfaceMaterial
     }
 
     private func save(_ value: some Encodable, key: String) {

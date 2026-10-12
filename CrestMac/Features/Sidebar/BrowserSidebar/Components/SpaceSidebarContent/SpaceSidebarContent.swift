@@ -25,6 +25,8 @@ struct SpaceSidebarContent: View {
         VStack(spacing: 0) {
             if utilitySurface == nil, !browser.isDeleting(space.id) {
                 BrowserEngineSidebarAccessory(space: space, browser: browser, pages: pages)
+                    // Above the pinned tabs, so the selected pin's glow slides under it.
+                    .zIndex(1)
             }
             Group {
                 if let utilitySurface {

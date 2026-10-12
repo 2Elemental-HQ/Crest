@@ -3,8 +3,6 @@ import SwiftUI
 struct BrowserPinnedExtensionStripContent: View {
     // MARK: - Static Variables
 
-    /// The gap between the strip and the sidebar content beside it.
-    static let adjacentSpacing = CrestSpacing.small
     private static let sectionHeight: CGFloat = 32
     private static let sectionCornerRadius = BrowserChromeLayout.addressCornerRadius
 
@@ -27,17 +25,10 @@ struct BrowserPinnedExtensionStripContent: View {
         .frame(
             height: actions.count > 0 ? Self.sectionHeight : 0
         )
-        .background(
-            CrestColor.chromeSurface,
-            in: .rect(
-                cornerRadius: Self.sectionCornerRadius
-            )
-        )
+        .background {
+            CrestSurfaceLayer(shape: .rect(cornerRadius: Self.sectionCornerRadius))
+        }
         .padding(.horizontal, BrowserChromeLayout.sidebarHorizontalInset)
-        .padding(
-            .bottom,
-            Self.adjacentSpacing
-        )
         .accessibilityElement(children: .contain)
         .accessibilityLabel("Pinned Extensions")
         .accessibilityIdentifier("browser-pinned-extensions")

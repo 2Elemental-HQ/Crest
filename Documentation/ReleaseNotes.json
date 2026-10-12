@@ -4033,6 +4033,10 @@
     "2026-10-12-extension-files-own-one-type": {
       "category": "internal",
       "message": "Give each extension file one owner type"
+    },
+    "2026-10-12-sidebar-surface-material": {
+      "category": "improved",
+      "message": "Choose how much the sidebar's tabs, folders and bars show through, from Ultra Thin to Ultra Thick, and keep pinned tabs close under the address bar"
     }
   }
 }

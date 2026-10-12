@@ -40,9 +40,9 @@ struct SpaceSidebarBrowsingContent: View {
         BrowserPinnedTabsDropSection(context: listContext)
             .equatable()
             .padding(.horizontal, CrestSpacing.small)
-            // The native Space host clips at this section's top edge. Keep the
-            // glow's drawing margin inside it, including below extension toolbars.
-            .padding(.top, hasPinnedTabs ? BrowserTabSelectionGlow.outset : 0)
+            // The selected pin's glow slides under the address field or the
+            // extension strip above rather than holding space of its own.
+            .padding(.top, hasPinnedTabs ? BrowserSidebarMetrics.topSectionSpacing : 0)
             .padding(.bottom, hasPinnedTabs ? BrowserSidebarMetrics.pinnedTabsBottomInset : 0)
 
         BrowserSpaceHeader(

@@ -24,8 +24,7 @@ struct BrowserFolderDragPreview: View {
             }
         }
         .frame(width: width, height: max(BrowserFolderDragPreviewLayout.height, sourceHeight), alignment: .topLeading)
-        .background(CrestColor.selectedSurface, in: shape)
-        .background(.regularMaterial, in: shape)
+        .background { CrestSurfaceLayer(shape: shape) }
         .overlay {
             shape.fill(folder.displayColor.color.opacity(0.12))
             shape.strokeBorder(folder.displayColor.color.opacity(0.35), lineWidth: 0.5)
@@ -63,7 +62,7 @@ struct BrowserFolderDragPreview: View {
                 ForEach(members, id: \.id) { tab in tabLine(tab, leadingInset: 0).frame(maxHeight: .infinity) }
             }
             .padding(CrestSpacing.extraSmall)
-            .background(CrestColor.chromeSurface, in: .rect(cornerRadius: CrestRadius.control))
+            .background { CrestSurfaceLayer(shape: .rect(cornerRadius: CrestRadius.control)) }
             .padding(.leading, max(BrowserFolderLayout.nestingIndent, row.frame.minX))
         }
     }

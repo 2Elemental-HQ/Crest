@@ -12,18 +12,20 @@ struct BrowserSidebarSplitGroupRowSurface: ViewModifier {
             .frame(maxWidth: .infinity)
             .contentShape(.rect)
             .background {
-                containerShape
-                    .fill(groupTint)
-                    .overlay { if isMultiSelected { containerShape.fill(CrestColor.hover) } }
-                    .overlay {
-                        if let tint = configuration.tint {
-                            containerShape.fill(
-                                tint.color.opacity(
-                                    configuration.isPresented ? 0.16 : 0.10
-                                )
+                CrestSurfaceLayer(
+                    shape: containerShape,
+                    hoverTint: configuration.isPresented ? CrestColor.hover : nil
+                )
+                .overlay { if isMultiSelected { containerShape.fill(CrestColor.hover) } }
+                .overlay {
+                    if let tint = configuration.tint {
+                        containerShape.fill(
+                            tint.color.opacity(
+                                configuration.isPresented ? 0.16 : 0.10
                             )
-                        }
+                        )
                     }
+                }
             }
             .animation(surfaceAnimation, value: configuration.isPresented)
             .animation(surfaceAnimation, value: isMultiSelected)
@@ -58,10 +60,6 @@ struct BrowserSidebarSplitGroupRowSurface: ViewModifier {
         configuration.members.contains {
             BrowserSidebarSelection.showsSelected(.tab($0.id), in: configuration.context)
         }
-    }
-
-    private var groupTint: Color {
-        configuration.isPresented ? CrestColor.hover : CrestColor.chromeSurface
     }
 
     private var containerShape: RoundedRectangle {

@@ -40,46 +40,30 @@ struct BrowserFolderHighlightSurface: ViewModifier {
         return baseline + (1 - baseline) * strength
     }
 
+    private var shape: RoundedRectangle {
+        RoundedRectangle(
+            cornerRadius: BrowserDeviceAppearanceStore.shared.containerCornerRadius(), style: .continuous)
+    }
+
     func body(content: Content) -> some View {
         content
             .background {
                 if showsFill {
-                    RoundedRectangle(
-                        cornerRadius: BrowserDeviceAppearanceStore.shared.containerCornerRadius(), style: .continuous
-                    )
-                    .fill(
-                        color.color.opacity(fillOpacity)
-                    )
-                    .overlay {
-                        if emphasisOpacity > 0 {
-                            RoundedRectangle(
-                                cornerRadius: BrowserDeviceAppearanceStore.shared.containerCornerRadius(),
-                                style: .continuous
-                            )
-                            .fill(.primary.opacity(emphasisOpacity))
+                    CrestSurfaceLayer(shape: shape, tint: color.color.opacity(fillOpacity))
+                        .overlay {
+                            if emphasisOpacity > 0 { shape.fill(.primary.opacity(emphasisOpacity)) }
                         }
-                    }
-                    .overlay {
-                        if isSelected {
-                            RoundedRectangle(
-                                cornerRadius: BrowserDeviceAppearanceStore.shared.containerCornerRadius(),
-                                style: .continuous
-                            )
-                            .fill(CrestColor.hover)
+                        .overlay {
+                            if isSelected { shape.fill(CrestColor.hover) }
                         }
-                    }
-                    .overlay {
-                        if showsBorders {
-                            RoundedRectangle(
-                                cornerRadius: BrowserDeviceAppearanceStore.shared.containerCornerRadius(),
-                                style: .continuous
-                            )
-                            .strokeBorder(color.color.opacity(0.5), lineWidth: 1)
+                        .overlay {
+                            if showsBorders {
+                                shape.strokeBorder(color.color.opacity(0.5), lineWidth: 1)
+                            }
                         }
-                    }
-                    .padding(.leading, leadingInset)
-                    .padding(.trailing, CrestSpacing.small)
-                    .allowsHitTesting(false)
+                        .padding(.leading, leadingInset)
+                        .padding(.trailing, CrestSpacing.small)
+                        .allowsHitTesting(false)
                 }
             }
             .environment(\.colorScheme, foregroundScheme)

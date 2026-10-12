@@ -33,8 +33,7 @@ struct BrowserTabDragPreview: View {
         let rowOpacity = 1 - Double(metrics.cardContentWeight)
 
         ZStack(alignment: .leading) {
-            shape
-                .fill(CrestColor.selectedSurface)
+            CrestSurfaceLayer(shape: shape)
                 .overlay {
                     shape.strokeBorder(CrestColor.subtleBorder, lineWidth: 0.5)
                 }

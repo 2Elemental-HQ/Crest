@@ -38,7 +38,7 @@ struct BrowserSplitGroupDragPreview: View {
         }
         .padding(Self.containerPadding)
         .frame(width: BrowserTabDragPreviewLayout.resolvedRowWidth(rowWidth))
-        .background(CrestColor.selectedSurface, in: shape)
+        .background { CrestSurfaceLayer(shape: shape) }
         .overlay {
             shape.strokeBorder(CrestColor.subtleBorder, lineWidth: 0.5)
         }

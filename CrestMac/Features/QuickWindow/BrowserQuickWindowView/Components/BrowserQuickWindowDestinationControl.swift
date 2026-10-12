@@ -27,13 +27,11 @@ struct BrowserQuickWindowDestinationControl: View {
             )
         }
         .font(.callout.weight(.semibold))
-        .background(
-            CrestColor.chromeSurface,
-            in: .rect(
-                cornerRadius: BrowserChromeLayout.addressCornerRadius,
-                style: .continuous
+        .background {
+            CrestSurfaceLayer(
+                shape: .rect(cornerRadius: BrowserChromeLayout.addressCornerRadius, style: .continuous)
             )
-        )
+        }
         .overlay {
             RoundedRectangle(
                 cornerRadius: BrowserChromeLayout.addressCornerRadius,
