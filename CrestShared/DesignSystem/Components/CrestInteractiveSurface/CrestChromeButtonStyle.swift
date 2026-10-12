@@ -9,9 +9,11 @@ struct CrestChromeButtonStyle: ButtonStyle {
         height: CrestLayout.minimumHitTarget
     )
     var cornerRadius = CrestLayout.sidebarControlCornerRadius
-    /// Draws the device's surface material at rest, for a tile that stands on
-    /// its own rather than a glyph that only shows a surface under the pointer.
-    var showsRestingSurface = false
+    /// Draws a fixed fill at rest, for a tile that stands on its own rather
+    /// than a glyph that only shows a surface under the pointer. It is a fill
+    /// rather than the device's material because these tiles sit inside
+    /// panels that already wear it, where material on material disappears.
+    var showsRestingFill = false
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -20,7 +22,7 @@ struct CrestChromeButtonStyle: ButtonStyle {
                     isPressed: configuration.isPressed,
                     controlSize: controlSize,
                     cornerRadius: cornerRadius,
-                    showsRestingSurface: showsRestingSurface
+                    showsRestingFill: showsRestingFill
                 )
             )
     }
@@ -30,7 +32,7 @@ private struct CrestChromeButtonSurface: ViewModifier {
     let isPressed: Bool
     let controlSize: CGSize?
     let cornerRadius: CGFloat
-    let showsRestingSurface: Bool
+    let showsRestingFill: Bool
 
     @Environment(\.isEnabled) private var isEnabled
 
@@ -46,8 +48,12 @@ private struct CrestChromeButtonSurface: ViewModifier {
             .crestHoverSurface(
                 isSelected: false,
                 cornerRadius: cornerRadius,
-                isPressed: isPressed,
-                showsRestingSurface: showsRestingSurface
+                isPressed: isPressed
             )
+            .background {
+                if showsRestingFill {
+                    RoundedRectangle(cornerRadius: cornerRadius, style: .continuous).fill(.quaternary)
+                }
+            }
     }
 }

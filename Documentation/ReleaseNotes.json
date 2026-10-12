@@ -4049,6 +4049,10 @@
     "2026-10-12-capsule-corners": {
       "category": "improved",
       "message": "Keep Capsule corners: single rows are capsules, and Split Views and open folders round their corners to match"
+    },
+    "2026-10-12-site-controls-tile-fill": {
+      "category": "improved",
+      "message": "Keep the buttons in Site Controls easy to see against its background"
     }
   }
 }

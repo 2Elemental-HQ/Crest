@@ -19,7 +19,7 @@ struct BrowserExtensionPinButton: View {
             CrestChromeButtonStyle(
                 controlSize: CGSize(width: Self.size, height: Self.size),
                 cornerRadius: Self.size / 2,
-                showsRestingSurface: true
+                showsRestingFill: true
             )
         )
         .accessibilityLabel(isPinned ? "Unpin Extension" : "Pin Extension")

@@ -31,7 +31,7 @@ struct BrowserBlockedPopupSiteControlNotice: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(CrestSpacing.small)
-        .background { CrestSurfaceLayer(shape: .rect(cornerRadius: CrestRadius.control)) }
+        .background(.quaternary, in: .rect(cornerRadius: CrestRadius.control))
         .accessibilityElement(children: .contain)
         .accessibilityLabel(notice.title)
         .accessibilityIdentifier("blocked-popup-site-control-notice")

@@ -19,7 +19,7 @@ struct BrowserSiteExtensionsHeader: View {
                         height: BrowserSiteControlMetrics.manageExtensionControlSize
                     ),
                     cornerRadius: 6,
-                    showsRestingSurface: true
+                    showsRestingFill: true
                 )
             )
             .accessibilityLabel("Manage Extensions")

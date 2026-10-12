@@ -18,7 +18,7 @@ struct BrowserSiteQuickActionButton: View {
                 .frame(height: BrowserSiteControlMetrics.quickActionHeight)
         }
         .buttonStyle(
-            CrestChromeButtonStyle(controlSize: nil, cornerRadius: CrestRadius.compact, showsRestingSurface: true)
+            CrestChromeButtonStyle(controlSize: nil, cornerRadius: CrestRadius.compact, showsRestingFill: true)
         )
         .accessibilityLabel(Text(title))
         .help(Text(title))

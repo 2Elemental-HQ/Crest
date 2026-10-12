@@ -11,7 +11,7 @@ struct BrowserSiteExtensionActionControl: View {
             BrowserSiteExtensionActionLabel(action: action)
         }
         .buttonStyle(
-            CrestChromeButtonStyle(controlSize: nil, cornerRadius: CrestRadius.compact, showsRestingSurface: true)
+            CrestChromeButtonStyle(controlSize: nil, cornerRadius: CrestRadius.compact, showsRestingFill: true)
         )
         .frame(maxWidth: .infinity)
         .overlay {
