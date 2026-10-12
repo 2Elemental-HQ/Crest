@@ -16,10 +16,10 @@ struct BrowserSiteQuickActionButton: View {
                 )
                 .frame(maxWidth: .infinity)
                 .frame(height: BrowserSiteControlMetrics.quickActionHeight)
-                .contentShape(.rect)
         }
-        .buttonStyle(.plain)
-        .background(.quaternary, in: .rect(cornerRadius: 8))
+        .buttonStyle(
+            CrestChromeButtonStyle(controlSize: nil, cornerRadius: CrestRadius.compact, showsRestingSurface: true)
+        )
         .accessibilityLabel(Text(title))
         .help(Text(title))
     }

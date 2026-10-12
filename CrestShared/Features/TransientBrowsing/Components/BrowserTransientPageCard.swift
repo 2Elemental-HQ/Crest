@@ -43,7 +43,7 @@ struct BrowserTransientPageCard<WebContent: View>: View {
             if reduceTransparency {
                 Rectangle().fill(.background)
             } else {
-                Rectangle().fill(.regularMaterial)
+                CrestSurfaceLayer(shape: Rectangle())
             }
         }
         .modifier(

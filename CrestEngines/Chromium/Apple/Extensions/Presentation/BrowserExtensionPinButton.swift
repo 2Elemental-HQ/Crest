@@ -14,14 +14,14 @@ struct BrowserExtensionPinButton: View {
         Button(action: action) {
             Image(systemName: isPinned ? "pin.slash.fill" : "pin.fill")
                 .font(.system(size: 8, weight: .semibold))
-                .frame(
-                    width: Self.size,
-                    height: Self.size
-                )
-                .contentShape(.circle)
         }
-        .buttonStyle(.plain)
-        .background(.regularMaterial, in: .circle)
+        .buttonStyle(
+            CrestChromeButtonStyle(
+                controlSize: CGSize(width: Self.size, height: Self.size),
+                cornerRadius: Self.size / 2,
+                showsRestingSurface: true
+            )
+        )
         .accessibilityLabel(isPinned ? "Unpin Extension" : "Pin Extension")
         .help(isPinned ? "Unpin Extension" : "Pin Extension")
     }

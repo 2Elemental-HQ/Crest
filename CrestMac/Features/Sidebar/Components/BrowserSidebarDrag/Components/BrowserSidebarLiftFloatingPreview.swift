@@ -51,7 +51,9 @@ struct BrowserSidebarLiftFloatingPreview: View {
                     .font(.caption)
                     .padding(8)
                     .frame(maxWidth: 280, alignment: .leading)
-                    .background(.regularMaterial, in: .rect(cornerRadius: 8))
+                    .background {
+                        CrestSurfaceLayer(shape: .rect(cornerRadius: BrowserSidebarMetrics.layerCornerRadius(depth: 0)))
+                    }
                     .offset(x: displayPointer.x + 12, y: displayPointer.y + lift.sourceSize.height + 12)
             }
         }

@@ -191,7 +191,7 @@ private struct BrowserRegionCaptureInstruction: View {
         .font(.callout.weight(.semibold))
         .padding(.horizontal, 18)
         .frame(height: 42)
-        .background(.regularMaterial, in: .capsule)
+        .background { CrestSurfaceLayer(shape: Capsule()) }
         .padding(.bottom, 28)
         .allowsHitTesting(false)
     }

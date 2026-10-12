@@ -15,10 +15,7 @@ struct MobileTransientBrowsingPreviewSurface: View {
                     .font(.headline)
             }
             .padding(CrestSpacing.extraLarge)
-            .background {
-                RoundedRectangle(cornerRadius: CrestRadius.panel)
-                    .fill(.regularMaterial)
-            }
+            .background { CrestSurfaceLayer(shape: .rect(cornerRadius: CrestRadius.panel)) }
         }
     }
 }

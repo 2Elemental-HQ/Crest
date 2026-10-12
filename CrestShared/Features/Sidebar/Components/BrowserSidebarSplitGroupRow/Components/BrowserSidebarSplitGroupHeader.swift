@@ -153,7 +153,7 @@ private struct BrowserSidebarSplitGroupIcon: View {
                     size: configuration.metrics.headerGlyphSize * 0.78
                 )
                 .padding(1)
-                .background(.regularMaterial, in: .circle)
+                .background { CrestSurfaceLayer(shape: Circle()) }
                 .overlay {
                     Circle()
                         .strokeBorder(
