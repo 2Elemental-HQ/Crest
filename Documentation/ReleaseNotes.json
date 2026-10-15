@@ -4117,6 +4117,10 @@
     "cross-space-link-tab-activation": {
       "category": "fixed",
       "message": "Opening a link in another Space shows the link there instead of the Start Page."
+    },
+    "palette-control-a-e-line-edges": {
+      "category": "fixed",
+      "message": "Control-A and Control-E move to the start and end of the line in the address bar instead of jumping between result sections."
     }
   }
 }
