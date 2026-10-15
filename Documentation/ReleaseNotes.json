@@ -4125,6 +4125,10 @@
     "sidebar-stays-hidden-after-focus-moves-away": {
       "category": "fixed",
       "message": "A hidden sidebar no longer slides back out on its own when you click into another app or another Mac with the pointer at the window edge."
+    },
+    "page-commands-follow-quick-window": {
+      "category": "fixed",
+      "message": "Back, Reload, Find, Zoom, Copy Page Link, Print and the other page commands work in a Quick Window."
     }
   }
 }
