@@ -4121,6 +4121,10 @@
     "palette-control-a-e-line-edges": {
       "category": "fixed",
       "message": "Control-A and Control-E move to the start and end of the line in the address bar instead of jumping between result sections."
+    },
+    "sidebar-stays-hidden-after-focus-moves-away": {
+      "category": "fixed",
+      "message": "A hidden sidebar no longer slides back out on its own when you click into another app or another Mac with the pointer at the window edge."
     }
   }
 }
