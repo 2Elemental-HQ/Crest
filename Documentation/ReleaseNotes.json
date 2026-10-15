@@ -4109,6 +4109,10 @@
     "chromium-whole-page-translation": {
       "category": "new",
       "message": "Translate whole pages on device in Chromium too, with the same translation toolbar, automatic translation and Show Original as WebKit pages."
+    },
+    "translation-unsupported-page-language": {
+      "category": "fixed",
+      "message": "Pages in more languages, such as Swedish, now translate, and a page in a language Apple Translation doesn’t support says so instead of offering a translation that fails."
     }
   }
 }
