@@ -4133,6 +4133,10 @@
     "peek-close-returns-keyboard": {
       "category": "fixed",
       "message": "Closing a Peek gives the keyboard back to the page underneath, so the arrow keys and Space scroll it again without a click."
+    },
+    "quick-window-page-tools": {
+      "category": "fixed",
+      "message": "Translate, Reader, content blocking, the Web Inspector and moving a page to the other engine now work on a Quick Window’s page."
     }
   }
 }
