@@ -4209,6 +4209,10 @@
     "history-kept-before-engine-state": {
       "category": "internal",
       "message": "A tab keeps its history across engines after a relaunch or when duplicated even before its page has any engine state to keep, and a long history no longer loses a run the page left on its oldest entry."
+    },
+    "chromium-form-submit-autofill-save-crash": {
+      "category": "fixed",
+      "message": "Crest no longer quits when you submit a form containing a payment card or address."
     }
   }
 }
