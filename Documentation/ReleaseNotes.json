@@ -4237,6 +4237,10 @@
     "sync-default-search-and-crest-passwords": {
       "category": "fixed",
       "message": "A new iPhone or iPad that syncs with iCloud searches with the default your other devices' Spaces follow instead of keeping Google, turning Crest Passwords on or off for a Space reaches your other devices, and Settings says which search and password choices stay on each device."
+    },
+    "share-sheet-open-links": {
+      "category": "new",
+      "message": "On iPhone and iPad, Crest appears in the share sheet, so a link shared from another app, or the first link in shared text, opens in Crest."
     }
   }
 }
