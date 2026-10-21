@@ -18,6 +18,7 @@ import SwiftUI
 struct MobileRegularPageSurface: View {
     @Environment(\.browserChromeAppearance) private var appearance
     @Environment(\.layoutDirection) private var layoutDirection
+    @Environment(\.mobileBrowserControlPlacement) private var controlPlacement
     let model: MobileBrowserRootModel
     let adjoinsSidebar: Bool
     let usesBorderlessPageFrame: Bool
@@ -47,6 +48,12 @@ struct MobileRegularPageSurface: View {
                 model.sidebarInteraction.sidebarReorderState.hasEnteredSplitContent,
             resolvedTarget: model.sidebarInteraction.sidebarReorderState.resolvedTarget,
             presentsTrailingPanel: false
+        )
+    }
+
+    private var frameInsets: EdgeInsets {
+        controlPlacement.pageInsets(
+            appearance.pageInsets(docked: adjoinsSidebar, direction: layoutDirection)
         )
     }
 
@@ -93,7 +100,7 @@ struct MobileRegularPageSurface: View {
                         .handleInteraction(.webContent)
                     model.navigation.handleRegularPageInteraction()
                 },
-                frameInsets: appearance.pageInsets(docked: adjoinsSidebar, direction: layoutDirection),
+                frameInsets: frameInsets,
                 content: MobileBrowserDetailSurface(
                     browser: model.browser,
                     pages: model.pages,
@@ -122,6 +129,13 @@ struct MobileRegularPageSurface: View {
                     compactTransitionEnded: compactTransitionEnded
                 )
             )
+            .overlay {
+                MobileHistorySwipeBorder(
+                    insets: frameInsets,
+                    leadingPage: model.selectedPage,
+                    trailingPage: model.selectedPage
+                )
+            }
             // The lone tab on show is a card as far as a drag is concerned: it
             // is what a dropped tab would join, and the side of it the finger
             // is on is which side of it the new card lands.
