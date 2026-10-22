@@ -4309,6 +4309,10 @@
     "crest-0-8-50-chromium-security-setup-translation": {
       "category": "new",
       "message": "Crest 0.8.50 updates Chromium with its latest security fixes and stops trusting the compromised eMudhra certificate authorities, rebuilds setup on the Mac, translates whole pages in Chromium, and fixes several crashes and problems quitting."
+    },
+    "upload-ios-cloud-archives-without-ad-hoc-export": {
+      "category": "internal",
+      "message": "Upload iOS Cloud archives to TestFlight from the App Store export when the ad hoc export fails"
     }
   }
 }
