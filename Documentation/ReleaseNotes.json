@@ -4337,6 +4337,10 @@
     "sidebar-hover-in-full-screen": {
       "category": "new",
       "message": "Settings > Appearance can keep the sidebar hover area working while a video plays full screen, so the sidebar floats over the video when the pointer reaches the edge of the screen."
+    },
+    "space-slide-continues-forward": {
+      "category": "fixed",
+      "message": "Pressing Next or Previous Space again while a Space is still sliding carries the slide on from where it is, without stepping back first, including around the ends."
     }
   }
 }
