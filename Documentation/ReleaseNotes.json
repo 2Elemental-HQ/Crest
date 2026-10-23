@@ -4313,6 +4313,10 @@
     "upload-ios-cloud-archives-without-ad-hoc-export": {
       "category": "internal",
       "message": "Upload iOS Cloud archives to TestFlight from the App Store export when the ad hoc export fails"
+    },
+    "appearance-light-dark-follow-system": {
+      "category": "new",
+      "message": "Keep Crest light or dark, or let it follow macOS, in Settings › Appearance. Spaces can also dim their colors in dark."
     }
   }
 }
