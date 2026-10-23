@@ -4321,6 +4321,10 @@
     "background-launch-for-connected-tools": {
       "category": "fixed",
       "message": "Connected tools can start Crest in the background without taking focus."
+    },
+    "space-neutral-look": {
+      "category": "new",
+      "message": "Spaces can start from a Neutral look: a plain gray sidebar with a fine grain that goes light or dark with the system. A Space's text color can follow the system's appearance too."
     }
   }
 }
