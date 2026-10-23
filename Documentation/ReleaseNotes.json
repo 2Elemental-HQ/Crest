@@ -4341,6 +4341,10 @@
     "space-slide-continues-forward": {
       "category": "fixed",
       "message": "Pressing Next or Previous Space again while a Space is still sliding carries the slide on from where it is, without stepping back first, including around the ends."
+    },
+    "agents-pointer-activity-and-questions": {
+      "category": "new",
+      "message": "An agent’s pointer shows where it works on a page, Settings › Agents lists what each agent did, Stop All Agents stops every agent at once, and Crest asks before an agent opens a window. Agents can also read a page’s text and answer its dialogs."
     }
   }
 }
