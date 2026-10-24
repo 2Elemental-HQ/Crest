@@ -4377,6 +4377,10 @@
     "pins-stretch-to-fill-row": {
       "category": "new",
       "message": "Pins can stretch to fill the width of a row that isn't full, so an uneven number of pins no longer leaves empty space."
+    },
+    "mouse-swipe-buttons-switch-spaces-over-sidebar": {
+      "category": "fixed",
+      "message": "Mouse Back and Forward buttons set up as swipes in Logitech Options+ switch Spaces when the pointer is over the sidebar, as other mice do."
     }
   }
 }
