@@ -115,7 +115,6 @@ the live status for each issue.
 - [ ] [Reveal the collapsed iPad sidebar on pointer hover](https://github.com/pauljoda/Crest/issues/176)
 - [ ] [Add privacy-preserving analytics and opt-in diagnostics](https://github.com/pauljoda/Crest/issues/179)
 - [ ] [feature: Add Edit Pinned URL menu option and dialogue](https://github.com/pauljoda/Crest/issues/218)
-- [ ] [Investigate mouse side buttons ignoring the sidebar's Space switching](https://github.com/pauljoda/Crest/issues/227)
 - [ ] [Make Quick Windows practical for short browsing sessions](https://github.com/pauljoda/Crest/issues/228)
 - [ ] [Keep tabs opened inside collapsed folders visible](https://github.com/pauljoda/Crest/issues/231)
 - [ ] [Return a pinned tab to its saved address from the mobile menu](https://github.com/pauljoda/Crest/issues/236)
@@ -169,6 +168,7 @@ the live status for each issue.
 #### Completed
 
 - [x] [feature: Swipping Tab Gesture On iphone](https://github.com/pauljoda/Crest/issues/54)
+- [x] [Investigate mouse side buttons ignoring the sidebar's Space switching](https://github.com/pauljoda/Crest/issues/227) — [`36ed0821`](https://github.com/pauljoda/Crest/commit/36ed0821b08b6373775208aa9bb104596f1184a1)
 - [x] [bug: Right-clicking an extension in Site Controls closes Site Controls](https://github.com/pauljoda/Crest/issues/262)
 - [x] [feature: Redesign bottom space picker in the sidebar. ](https://github.com/pauljoda/Crest/issues/265)
 - [x] [bug: http://192.168.0.1 automatically turns into https://192.168.0.1 and can not be open](https://github.com/pauljoda/Crest/issues/363)
