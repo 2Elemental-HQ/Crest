@@ -4561,6 +4561,10 @@
     "quick-window-space-switcher": {
       "category": "new",
       "message": "Click the Space in a Quick Window’s address bar to switch Spaces. The page reloads in the Space you choose, with that Space’s cookies and passwords, and Crest remembers the choice for that site."
+    },
+    "quick-window-address-drag-selects-text": {
+      "category": "fixed",
+      "message": "Dragging across a Quick Window’s address field selects its text instead of moving the window. The space around the field still moves the window."
     }
   }
 }
