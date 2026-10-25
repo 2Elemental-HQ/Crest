@@ -4553,6 +4553,10 @@
     "keyboard-tab-keeps-the-space-on-ipad": {
       "category": "fixed",
       "message": "On iPad with a keyboard, pressing Tab in a webpage's form no longer switches to another Space."
+    },
+    "floating-sidebar-exit-margin": {
+      "category": "improved",
+      "message": "The floating sidebar stays open when the pointer drifts just past its edge, and hides once the pointer moves further into the page."
     }
   }
 }
